@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TheProductiveFamily.Views.SignInPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions=
+                "FillAndExpand" Padding="5">
+                <Entry Placeholder="Email"/>
+                <Entry Placeholder="Phone Number"/>
+                <Button BorderColor="#CCC" Text="تسجيل الدخول"/>
+                <Button BorderColor="#CCC" Text="الاشتراك"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
