@@ -1,5 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TheProductiveFamily.App">
-    <Application.Resources>
+       <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ColorPrimary">#184787</Color>
+            <Color x:Key="ColorPrimaryDark">#184787</Color>
+            <Color x:Key="ColorAccent">#FF4081</Color>
+            <Color x:Key="Black">#000000</Color>
+            <Color x:Key="White">#FFFFFF</Color>
+            <Color x:Key="red">#e11e28</Color>
+            <Color x:Key="GreyCounter">#777575</Color>
+            <Color x:Key="blue">#154988</Color>
+            <Color x:Key="GreyMenu">#62676d</Color>
+            <Color x:Key="Green">#27ae4a</Color>
+            <Color x:Key="ToleranceTextColor">#ee3954</Color>
+            <Color x:Key="FieldColor">#8b8f96</Color>
+            <Color x:Key="DeltaTextColor">#517bbd</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource ColorPrimaryDark}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

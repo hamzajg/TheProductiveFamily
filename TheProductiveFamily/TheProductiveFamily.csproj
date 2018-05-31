@@ -6,11 +6,59 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.446417" />
+    <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\ServicesListPage.cs" />
+    <Compile Remove="Resources.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AppResources.Designer.cs">
+      <DependentUpon>AppResources.en-CA.resx</DependentUpon>
+    </Compile>
+    <Compile Update="AppResources1.Designer.cs">
+      <DependentUpon>AppResources.en-ca.resx</DependentUpon>
+    </Compile>
+    <Compile Update="AppResources.en-ca.Designer.cs">
+      <DependentUpon>AppResources.en-ca.resx</DependentUpon>
+    </Compile>
+    <Compile Update="AppResources2.Designer.cs">
+      <DependentUpon>AppResources.ar-ar.resx</DependentUpon>
+    </Compile>
+    <Compile Update="AppResources.ar-ar.Designer.cs">
+      <DependentUpon>AppResources.ar-ar.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="AppResources.en-CA.resx">
+      <LogicalName>TheProductiveFamily.AppResources.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="AppResources.ca.resx">
+      <LogicalName>TheProductiveFamily.AppResources.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppResources1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppResources.en-ca.resx">
+      <LastGenOutput>AppResources.en-ca.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppResources2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

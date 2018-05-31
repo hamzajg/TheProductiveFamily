@@ -1,4 +1,5 @@
 using System;
+using TheProductiveFamily.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace TheProductiveFamily
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new SignInPage());
         }
 
         protected override void OnStart()

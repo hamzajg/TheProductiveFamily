@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TheProductiveFamily.Views.MasterDetailMasterPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="MenuItemsListView"
+                      SeparatorVisibility="None"
+                      HasUnevenRows="true"
+                      ItemsSource="{Binding MenuItems}" BackgroundColor="{StaticResource GreyMenu}">
+              <ListView.Header>
+                <Grid BackgroundColor="{StaticResource GreyMenu}">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                    <StackLayout Grid.Column="1" Grid.Row="2" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                      <Image Source="profile_geometre_logo" WidthRequest="75"/>
+                      <Label Text="Dimitri TARZE" VerticalOptions="CenterAndExpand"
+                          Style="{DynamicResource SubtitleStyle}"
+                          TextColor="#ffffff"/>
+                    </StackLayout>
+                </Grid>
+              </ListView.Header>
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <ViewCell>
+                    <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
+                        <Label VerticalOptions="FillAndExpand" TextColor="#ffffff"
+                            VerticalTextAlignment="Center" Text="{Binding Title}" FontSize="18" />
+                    </StackLayout>
+                  </ViewCell>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+            </ListView>
+      </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
