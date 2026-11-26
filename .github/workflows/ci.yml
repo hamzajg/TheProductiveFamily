@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build shared library
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      # The Android and iOS heads need Visual Studio with the retired Xamarin
+      # workload, but the shared .NET Standard 2.0 project builds on a plain
+      # SDK, so its compilation is the check a hosted runner can make.
+      - name: Build the shared project
+        run: dotnet build TheProductiveFamily/TheProductiveFamily.csproj
