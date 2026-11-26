@@ -12,17 +12,20 @@ platform hosts for Android/iOS, English (Canada) + Arabic resources
 
 ## Commands
 
-**No CI.** Build requires Visual Studio / Visual Studio for Mac with
-the Xamarin workload — not verifiable in this environment.
+CI compiles the shared .NET Standard 2.0 project
+(`.github/workflows/ci.yml`). The Android and iOS heads still need Visual
+Studio / Visual Studio for Mac with the retired Xamarin workload, so they
+are not built in CI.
 
 | Task | Command |
 |---|---|
+| Build shared lib (CI) | `dotnet build TheProductiveFamily/TheProductiveFamily.csproj` |
 | Build (Windows/VS) | open `TheProductiveFamily.sln`, build Android/iOS head |
 | Build (CLI, if workloads installed) | `msbuild TheProductiveFamily.sln` or `dotnet build` (Xamarin heads may still need VS/MAUI-era tooling) |
 
-Treat all build claims as **unverified** — Xamarin.Forms 3.0 is legacy;
-modern .NET SDKs may not build it. The .sln has three projects:
-shared `TheProductiveFamily` + `.Android` + `.iOS` heads.
+Xamarin.Forms 3.0 is legacy; modern .NET SDKs build the shared project but
+not the platform heads. The .sln has three projects: shared
+`TheProductiveFamily` + `.Android` + `.iOS` heads.
 
 ## Architecture
 
